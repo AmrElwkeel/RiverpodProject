@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_project/src/data/data_source/shared_preferences/shared_preferences.dart';
 import 'package:riverpod_project/src/pages/home.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferencesHelperImpl().init();
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
+
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
       debugShowMaterialGrid: false,
       showSemanticsDebugger: false,

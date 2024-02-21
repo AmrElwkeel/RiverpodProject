@@ -38,6 +38,8 @@ dependencies:
 
   http: ^1.2.0
   flutter_riverpod: ^2.4.10
+  shared_preferences: ^2.1.0
+
 
 
 
